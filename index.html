@@ -1,0 +1,30 @@
+<html ng-app="udemyAdmin">
+  <head>
+    <title>Angular learning</title>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+  </head>
+  <body ng-controller="articleCtrl">
+
+   <!-- {{}} can also be used as an alternate to ng-bind -->
+
+    <!-- <div ng-bind="title"></div>
+    <div ng-bind="getTitle()"></div>
+    <div>{{title}}</div>
+    <div>{{getTitle()}}</div>
+    textfield to help understand two-way binding by using ng-model directive
+    <input type="text" ng-model="title"> -->
+
+    <!-- section to demonstrate ng-repeat -->
+    Number of articles to display : <input type="text" ng-model="numArticles">
+    <div ng-repeat="article in articles" ng-bind="article.title"></div>
+    <ul>
+    <!-- using limitTo filter to filter data in articles object  -->
+      <li ng-repeat="article in articles | limitTo:numArticles">
+        <p>{{article.title}}</p>
+      </li>
+    </ul>
+    <script src='app.js'></script>
+    <script src='controllers.js'></script>
+    <script src='services.js'></script>
+  </body>
+</html>
